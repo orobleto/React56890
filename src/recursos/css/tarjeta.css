@@ -1,0 +1,29 @@
+.tarjeta1{
+    width: 33%;
+    box-shadow: 0 5px 10px blueviolet;
+    transition: 0.5s;
+    border: 1px;
+}
+
+
+.tarjeta1:hover{
+    box-shadow: 0 10px 15px brown;
+}
+
+
+.tarjeta2{
+    width: 33%;
+    box-shadow: 0 5px 10px blue;
+    transition: 0.5s;
+    border: 1px;
+}
+
+
+.tarjeta2:hover{
+    box-shadow: 0 10px 15px orangered;
+}
+
+
+
+
+

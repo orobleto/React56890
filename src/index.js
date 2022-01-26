@@ -1,17 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Users from './Componentes/Users';
+import Tarjeta from './Tarjeta';
+import Titulo from './Titulo';
+
+
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <Users/>
+{/*
+    <Titulo titulo="Fundacion" subtitulo="TRILOGIA ASIMOV" parrafo="Todo comienza en trantor..."/>
+    <Titulo titulo="Cien años de Soledad" subtitulo="GG MARQUES" parrafo="Todo comienza en Colombia..."/>
+    <Tarjeta descripcion = "Octavio Robleto" usuario="orobleto" correo="octavio.robleto@gmail.com"/>  
+    <Tarjeta descripcion = "Nicolas Borsari" usuario="nborsari" correo="nicolas.borsari@gmail.com"/>  
+
+*/}
+  </React.StrictMode>
+
+  ,
+
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
