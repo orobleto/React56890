@@ -13,26 +13,37 @@ export default class Formulario extends Component {
 
     }
 
-    // api
-    // json
-    AsignarEstados = (atributo, valor) => { // (usuario,octavio.robleto)
-        let estado = {};
-        estado[atributo] = valor; // estado = { usuario:"octavio.robleto"}
-        this.setState(estado);
-        console.log(this.state);
+    EnviarFormulario = (e) => {
+        e.preventDefault();
+
+        // voy a llamar a mi api enviar la informacion
+
+        this.LimpiarFormulario();
+    }
+
+    LimpiarFormulario = () => {
+        this.setState({
+            usuario: "",
+            clave: ""
+        });
+    }
+    AsignarEstados = (evento) => {
+        this.setState({
+            [evento.target.name]: evento.target.value
+        });
     }
 
     render() {
         return (
             <div>
-                <form>
+                <form id="fomrulario" onSubmit={this.EnviarFormulario}>
                     <input
                         type="text"
                         id="usuario"
                         name="usuario"
                         required={true}
                         value={this.state.usuario} // usuario = valor del input
-                        onChange={(e) => this.AsignarEstados(e.target.name, e.target.value)}
+                        onChange={this.AsignarEstados}
 
                     />
                     <br />    <br />
@@ -42,12 +53,12 @@ export default class Formulario extends Component {
                         name="clave"
                         required={true}
                         value={this.state.clave}
-                        onChange={(e) => this.AsignarEstados(e.target.name, e.target.value)}
+                        onChange={this.AsignarEstados}
 
                     />
                     <br />    <br />
-                    <button>Enviar</button>
-                    <button>Cancelar</button>
+                    <button type="submit">Enviar</button>
+                    <button type="reset" onClick={this.LimpiarFormulario}>Cancelar</button>
 
 
                 </form>
