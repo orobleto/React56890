@@ -15,7 +15,12 @@ export default class Formulario extends Component {
 
     // api
     // json
-
+    AsignarEstados = (atributo, valor) => { // (usuario,octavio.robleto)
+        let estado = {};
+        estado[atributo] = valor; // estado = { usuario:"octavio.robleto"}
+        this.setState(estado);
+        console.log(this.state);
+    }
 
     render() {
         return (
@@ -27,7 +32,7 @@ export default class Formulario extends Component {
                         name="usuario"
                         required={true}
                         value={this.state.usuario} // usuario = valor del input
-                        onChange={(evento) => { this.setState({ usuario: evento.target.value }) }}
+                        onChange={(e) => this.AsignarEstados(e.target.name, e.target.value)}
 
                     />
                     <br />    <br />
@@ -37,7 +42,8 @@ export default class Formulario extends Component {
                         name="clave"
                         required={true}
                         value={this.state.clave}
-                        onChange={(evento) => { this.setState({ clave: evento.target.value }) }}
+                        onChange={(e) => this.AsignarEstados(e.target.name, e.target.value)}
+
                     />
                     <br />    <br />
                     <button>Enviar</button>
